@@ -1,0 +1,18 @@
+version: '2.3'
+services:
+  python:
+    build: .
+    image: xieqihui/nfm:v1
+    container_name: neural_factorization_machine
+    runtime: nvidia
+    ports:
+        - "8889:8889"        
+        - "8890:8890"        
+        - "6006:6006"
+        - "2222:2222"
+        - "5000:5000"
+    stdin_open: true
+    tty: true
+    volumes:
+        - "${HOME}:/root"
+        - "/media/data:/data"
